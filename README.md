@@ -8,11 +8,13 @@ this repository.
 
 ## Current Release
 
-- Package: `DeadlineMaxBridge-3dsMax2027.zip`
+- Installer: `DeadlineMaxBridge-3dsMax2027-Setup.exe`
+- Manual package: `DeadlineMaxBridge-3dsMax2027.zip`
 - Target: AWS Thinkbox Deadline 10.x repositories with Autodesk 3ds Max 2027
-- SHA-256: `07BE2330374F31BC21FD8E2BD9F809BE7CEF78FC5E9233F82B8C5D4796054047`
+- Installer SHA-256: `66CA758B345504F56B383981132199246D2E1037E6400BB03F867F3B035B7501`
+- Zip SHA-256: `54FF8188BF047B921E8250CEF82BFF89ECEB097159A9524335580C3C1DED7C5B`
 
-Download the latest package from:
+Download the latest release from:
 
 https://github.com/electrotoast/deadline-max-bridge-releases/releases/latest
 
@@ -31,6 +33,20 @@ The package contains runtime installer scripts required for Deadline and
 private build system.
 
 ## Install
+
+### Guided Installer
+
+Download and run:
+
+```text
+DeadlineMaxBridge-3dsMax2027-Setup.exe
+```
+
+Choose the Deadline repository root and whether to install the 3ds Max 2027
+Deadline menu for the current Windows user. If repository writes require
+elevation, right-click the setup executable and choose **Run as administrator**.
+
+### Manual Zip Install
 
 Extract the release archive, open PowerShell in the extracted folder, and run:
 
@@ -53,10 +69,12 @@ installer can usually resolve it without `-RepositoryRoot`.
 Before installing, verify the download:
 
 ```powershell
+Get-FileHash .\DeadlineMaxBridge-3dsMax2027-Setup.exe -Algorithm SHA256
 Get-FileHash .\DeadlineMaxBridge-3dsMax2027.zip -Algorithm SHA256
 ```
 
-The hash should match the SHA-256 listed above and in the release notes.
+The hashes should match the SHA-256 values listed above and in the release
+notes.
 
 After installation:
 
@@ -82,6 +100,9 @@ To also remove the private current-user 3ds Max menu files:
 ## Notes
 
 - This is a release/distribution repository, not an open-source source tree.
+- GitHub's automatic `Source code (zip)` and `Source code (tar.gz)` downloads
+  are README-only repository snapshots. Use the installer or manual package
+  assets for installation.
 - The installer backs up replaced repository files before overwriting them.
 - The default install does not edit stock Deadline `3dsmax`, `3dsCmd`, or
   submitter files.
