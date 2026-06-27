@@ -1,0 +1,76 @@
+name: Bug Report
+description: Report behavior after install, Worker render problems, or submitter issues.
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: input
+    id: release-version
+    attributes:
+      label: Release version
+      placeholder: v0.1.1
+    validations:
+      required: true
+  - type: input
+    id: deadline-version
+    attributes:
+      label: Deadline version
+      placeholder: Deadline 10.4.x
+    validations:
+      required: true
+  - type: input
+    id: max-version
+    attributes:
+      label: 3ds Max version
+      placeholder: 3ds Max 2027
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Setup installer
+        - Manual zip install
+        - Deadline repository files
+        - 3ds Max submitter menu
+        - Deadline Monitor submitter
+        - Deadline Worker render
+        - Uninstall
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Install v0.1.1 with ...
+        2. Open 3ds Max 2027 ...
+        3. Submit ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or error output
+      description: Include Deadline Worker logs, setup logs, or 3ds Max listener output if relevant.
+      render: text
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Include plugins/renderers involved, permissions, network repository details, or workaround attempts.

@@ -1,0 +1,94 @@
+name: Install Feedback
+description: Report install results, setup failures, or environment-specific behavior.
+title: "[Install feedback]: "
+labels:
+  - install-feedback
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing Deadline Max Bridge. Please include enough environment detail for us to reproduce or route the issue quickly.
+  - type: input
+    id: release-version
+    attributes:
+      label: Release version
+      description: Example: v0.1.1
+      placeholder: v0.1.1
+    validations:
+      required: true
+  - type: dropdown
+    id: artifact
+    attributes:
+      label: Download used
+      options:
+        - DeadlineMaxBridge-3dsMax2027-Setup.exe
+        - DeadlineMaxBridge-3dsMax2027.zip
+    validations:
+      required: true
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 Pro 24H2
+    validations:
+      required: true
+  - type: input
+    id: deadline-version
+    attributes:
+      label: Deadline version
+      placeholder: Deadline 10.4.x
+    validations:
+      required: true
+  - type: input
+    id: max-version
+    attributes:
+      label: 3ds Max version
+      placeholder: 3ds Max 2027
+    validations:
+      required: true
+  - type: dropdown
+    id: install-mode
+    attributes:
+      label: Install mode
+      options:
+        - Guided installer
+        - Manual PowerShell install
+        - Silent installer
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: current-user-submitter
+    attributes:
+      label: Current-user submitter installed?
+      options:
+        - "Yes"
+        - "No"
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead?
+      description: Include error dialogs, PowerShell errors, or setup output.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste the relevant part of `%TEMP%\DeadlineMaxBridge-Install-*.log` or PowerShell output. Remove private paths, hostnames, or credentials if needed.
+      render: text
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Repository layout, permissions, Worker behavior, or submitter menu behavior.

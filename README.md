@@ -18,6 +18,15 @@ Download the latest release from:
 
 https://github.com/electrotoast/deadline-max-bridge-releases/releases/latest
 
+## Feedback
+
+- Installation failures: open an **Install Feedback** issue.
+- Reproducible bugs after install: open a **Bug Report** issue.
+- General setup questions: use GitHub Discussions.
+
+For setup failures, include the relevant part of
+`%TEMP%\DeadlineMaxBridge-Install-*.log`.
+
 ## What Is Included
 
 The package installs a private 3ds Max 2027 lane for Deadline:
@@ -101,8 +110,8 @@ To also remove the private current-user 3ds Max menu files:
 
 - This is a release/distribution repository, not an open-source source tree.
 - GitHub's automatic `Source code (zip)` and `Source code (tar.gz)` downloads
-  are README-only repository snapshots. Use the installer or manual package
-  assets for installation.
+  are public release-repository snapshots, not installer packages. Use the
+  installer or manual package assets for installation.
 - The installer backs up replaced repository files before overwriting them.
 - The default install does not edit stock Deadline `3dsmax`, `3dsCmd`, or
   submitter files.
